@@ -508,15 +508,15 @@ $.ajax({
             
 
 $('.download').click(function(){
-    window.open('https://get.tacter.app/WxYiSJCxaeb');
+    window.open('https://get.tacter.app/KWRiClhutfb');
 });
 
 
 $('.btn_share').click(function(){
     var network = $(this).attr('alt');
     var share_url = document.location.href;
-    var share_message = document.title; //pending
-
+    var share_message = 'Check my TFT Set 4 performance';
+    
     if (network == 'twitter') {
         share_url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(share_message) + '&tw_p=tweetbutton&url=' + share_url;
 
