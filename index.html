@@ -370,7 +370,7 @@ function goStep(index){
     });
 
         
-    $('#step' + index + ' .icon').each(function(i, obj){
+    $('#step' + index + ' .icon').css('opacity', 0).each(function(i, obj){
 
         $(this).delay(i*250).animate({
             opacity: 1
