@@ -374,7 +374,7 @@ function goStep(index){
     
     $('#error').hide();
     $('.step').hide();
-    $('#step'+index).show();
+    $('#step'+index).fadeIn();
     
 
     $('#step' + index + ' .number').each(function(){
@@ -620,7 +620,8 @@ $(function(){
         username = searchParams.get('summonerName');
         region = searchParams.get('region');
 
-        goStep(2);
+        $('#step1').hide();
+        $('#step2').hide();
 
         checkSummoner(username, region);
     }
