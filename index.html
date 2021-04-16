@@ -554,8 +554,15 @@ function checkSummoner(username, region){
 
             
 
-            }else if(e.status === 404){
+            }else if(e.status === 400){
             
+                alert('400');
+                console.log(data);
+                showError();
+                
+
+            }else if(e.status === 404){
+                
                 alert('404');
                 console.log(data);
                 showError();
