@@ -1,5 +1,5 @@
 var step = 1;
-var report_timeout = 30 * 1000; // 30 seg
+var timeout_report = 30 * 1000; // 30 seg
 var screen_width = $(document).width();
 var is_mobile = screen_width < 480;
 var loading = false;
@@ -179,7 +179,7 @@ function checkSummoner(username, region){
             }else if(e.status === 202){
                 setTimeout(function(){
                     checkSummoner(username, region);
-                }, report_timeout);
+                }, timeout_report);
             }else if(e.status === 400){
                 showError(data);
             }else if(e.status === 500){
