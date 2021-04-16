@@ -5,6 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    
+    <meta property="og:image" content="https://tacterapp.github.io/tft-set-report/static/img/social.png">
+    <meta property="og:image:secure_url"
+        content="https://tacterapp.github.io/tft-set-report/static/img/social.png">
+    <meta property="og:image:alt" content="TFT Set 4 Report">
+    <meta property="og:image:type" content="image/png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TFT Set 4 Report">
+    <meta name="twitter:image" content="https://tacterapp.github.io/tft-set-report/static/img/social.png">
 </head>
 <body>
     
@@ -17,7 +28,7 @@ HTML, BODY{height:100%;}
 BODY{margin:0;padding:0;font-size:1rem;text-align:center;color:#a4b3bf;background:black url('static/img/background.png') top center;background-size:cover;background-attachment:fixed;}
 BUTTON.next{cursor:pointer;font-size:1.1rem;font-weight:bold;border:1px #c79e57 solid;background:#c79e57;padding:10px 20px;color:#171721;border-radius:5px;}
 BUTTON.back{font-size:18px;margin-top:10px;cursor:pointer;background:none;padding:0;border:0;color:#c79e57;font-weight:bold;text-decoration:none;}
-SELECT, INPUT[type=text]{margin:10px 0;width:90%;padding:10px 20px;background:#202326;border:1px #a4b3bf solid;color:#a4b3bf;border-radius:5px;}
+SELECT, INPUT[type=text], INPUT[type=email]{margin:10px 0;width:95%;padding:10px 20px;background:#202326;border:1px #a4b3bf solid;color:#a4b3bf;border-radius:5px;}
 A.link{color:#c79e57;font-weight:bold;text-decoration:none;}
 A.legal{color:#a4b3bf;text-decoration:none;}
 strong{font-size:40px;display:block;}
@@ -90,55 +101,59 @@ table tr.bold td{font-weight:bold;color:white;}
 
 
 <div id="step1" class="wrap2 step">
-    <h1>Welcome to the TFT Set 4 Report</h1>
-    <div class="credits">
-        Powered by <a href="https://get.tacter.app/WxYiSJCxaeb" target="_blank">Tacter App <img src="static/img/tacter_logo_small.png" align="absmiddle" width="20"></a>
-        <br>and <a href="https://leagueoflegends.fandom.com/wiki/Giant_Slayer_(Teamfight_Tactics)" target="_blank">Giant Slayer <img src="static/img/giant_slayer_logo.png" align="absmiddle" width="20"></a>
-    </div>
-    <p><b>Add your summoner name and region to see your Set 4 performance</b></p>
-    <label>Find your summoner</label>
-    <input type="text" placeholder="Add your summoner name"> 
-    <select>
-        <option>BR</option>
-        <option selected="selected">EUNE</option>
-        <option>EUW</option>
-        <option>KR</option>
-        <option>LAN</option>
-        <option>LAS</option>
-        <option>NA</option>
-        <option>OCE</option>
-        <option>TR</option>
-        <option>RU</option>
-        <option>JP</option>
-    </select>
-    <div class="row">
-        <div class="col2">
-            <a href="#" target="_blank" class="link">See a report example</a>
+    <form id="form_username">
+        <h1>Welcome to the TFT Set 4 Report</h1>
+        <div class="credits">
+            Powered by <a href="https://get.tacter.app/WxYiSJCxaeb" target="_blank">Tacter App <img src="static/img/tacter_logo_small.png" align="absmiddle" width="20"></a>
+            <br>and <a href="https://leagueoflegends.fandom.com/wiki/Giant_Slayer_(Teamfight_Tactics)" target="_blank">Giant Slayer <img src="static/img/giant_slayer_logo.png" align="absmiddle" width="20"></a>
         </div>
-        <div class="col2 textR">
-            <button class="next" onclick="goStep(2)">Start <img src="static/img/next.png" align="absmiddle" width="20"></button>
+        <p><b>Add your summoner name and region to see your Set 4 performance</b></p>
+        <label>Find your summoner</label>
+        <input id="summoner" required="required" value="BaratoNoMas" type="text" placeholder="Add your summoner name"> 
+        <select id="region" required="required">
+            <option value="br">BR</option>
+            <option value="eune">EUNE</option>
+            <option value="euw" selected="selected">EUW</option>
+            <option value="kr">KR</option>
+            <option value="lan">LAN</option>
+            <option value="las">LAS</option>
+            <option value="na">NA</option>
+            <option value="oce">OCE</option>
+            <option value="tr">TR</option>
+            <option value="ru">RU</option>
+            <option value="jp">JP</option>
+        </select>
+        <div class="row">
+            <div class="col2">
+                <a href="#" target="_blank" class="link">See a report example</a>
+            </div>
+            <div class="col2 textR">
+                <button class="next" type="submit">Start <img src="static/img/next.png" align="absmiddle" width="20"></button>
+            </div>
+            <br class="clear">
         </div>
-        <br class="clear">
-    </div>
+    </form>
 </div>
 
 <div id="step2" class="wrap2 step hide">
-    <h2>Analysing your matches...</h2>
-    <p><img src="static/img/loading.gif"></p>
-    <p>This might take a while, add your email and we'll let you know when it's ready</p>
-    <label>Email</label>
-    <input type="text" placeholder="Add your email"> 
-    <label><input type="checkbox"> <a href="#" class="legal">Terms & Conditions</a></label>
-    <div class="row">
-        <div class="col2 textL">
-            <button class="back" onclick="goStep(1)"><img src="static/img/back1.png" align="absmiddle" width="16"> Back</button>
-        </div>
-        <div class="col2 textR">
-            <button class="next" onclick="goStep(3)">Submit email</button>
-        </div>
-        <br class="clear">
-    </div> 
-    <div class="row hide" id="msg_sent"><b>We'll let you know when it's ready!</b></div>
+    <form id="form_email">
+        <h2>Analysing your matches...</h2>
+        <p><img src="static/img/loading.gif"></p>
+        <p>This might take a while, add your email and we'll let you know when it's ready</p>
+        <label>Email</label>
+        <input type="email" required="required" value="gafeman@gmail.com" placeholder="Add your email"> 
+        <label><input type="checkbox" required="required" checked="checked"> <a href="#" class="legal">Terms & Conditions</a></label>
+        <div class="row">
+            <div class="col2 textL">
+                <button class="back" onclick="goStep(1)"><img src="static/img/back1.png" align="absmiddle" width="16"> Back</button>
+            </div>
+            <div class="col2 textR">
+                <button class="next" type="submit" id="btn_send_email">Submit email</button>
+            </div>
+            <br class="clear">
+        </div> 
+        <div class="row hide" id="msg_sent"><b>We'll let you know when the report is ready!</b></div>
+    </form>
 </div>
 
 <div id="step3" class="wrap step hide">
@@ -334,7 +349,9 @@ table tr.bold td{font-weight:bold;color:white;}
 var step = 1;
 var screen_width = $(document).width();
 var is_mobile = screen_width < 480;
-
+var loading = false;
+var username;
+var region;
 
 function format_time(time) {
     // Hours, minutes and seconds
@@ -354,6 +371,8 @@ function format_time(time) {
 
 
 function goStep(index){
+    
+    $('#error').hide();
     $('.step').hide();
     $('#step'+index).show();
     
@@ -400,13 +419,10 @@ function goStep(index){
 
 
 
-$.ajax({
-    url: 'test.json', //https://staging.tacter.app/tft/v1/report?summonerName=BaratoNoMas&region=euw
-    dataType: 'json'
-}).done(function(data) {
     
-    console.log(data);
 
+function printInformation(data){
+    
 
     $('.username').html(data.summonerName);
     $('.region').html(data.region);
@@ -424,15 +440,15 @@ $.ajax({
 
     $('.time_longest_hour').data('number', t_longest_time[0]);
     $('.time_longest_minute').data('number', t_longest_time[1]);
-    
+
     $('.time_shortest_hour').data('number', t_shortest_time[0]);
     $('.time_shortest_minute').data('number', t_shortest_time[1]);
-    
+
     $('.time_avg_hour').data('number', t_avg_time[0]);
     $('.time_avg_minute').data('number', t_avg_time[1]);
-    
 
-    
+
+
 
 
     $('.rank_icon').css('background-image', "url('" + data.rankIconURL + "')");   
@@ -440,27 +456,27 @@ $.ajax({
     $('.total_hours').data('number', parseInt(data.hoursCount));
     $('.total_killed').data('number', parseInt(data.playersKilled));
     $('.total_damage').data('number', parseInt(data.playersDamage));
-    
+
 
 
     var html_champions = '';
     $(data.champions).each(function(){
-        html_champions += '<div class="col3">Yuumi<img src="' + this.iconURL + '" class="icon"><b><span class="number" data-number="' + this.games + '">0</span> games</b>45% top ' + this.rank + '</div>';
+        html_champions += '<div class="col3">' + this.name + '<img src="' + this.iconURL + '" class="icon"><b><span class="number" data-number="' + this.games + '">0</span> games</b>' + this.rank + '% top 4</div>';
     });
     $('#champions').html(html_champions);
 
 
     var html_items = '';
     $(data.items).each(function(){
-        html_items += '<div class="col3"><img src="' + this.iconURL + '" class="icon"><b><span class="number" data-number="' + this.games + '">0</span> games</b>45% top ' + this.rank + '</div>';
+        html_items += '<div class="col3">' + this.name + '<img src="' + this.iconURL + '" class="icon"><b><span class="number" data-number="' + this.games + '">0</span> games</b>' + this.rank + '% top 4</div>';
     });
     $('#items').html(html_items);
-    
+
 
     var html_items_aux = '&nbsp; <img src="' + data.champions[0].iconURL + '" align="absmiddle" width="30" height="30" class="icon"> ';
     html_items_aux += '<img src="' + data.items[0].iconURL + '" align="absmiddle" width="30" height="30" class="icon"> ';
     $('#step6 .box_avatar div').append(html_items_aux);
-    
+
 
 
     var placement_max = 0;
@@ -500,34 +516,143 @@ $.ajax({
     html_placements += '</tr>';
 
     $('.placements').html(html_placements);
+}
+
+
+function checkSummoner(username, region){
+
 
     
-});
+    $.ajax({
+        url: 'https://staging.tacter.app/tft/v1/report?summonerName=' + username + '&region=' + region,// 'test.json?v=2',
+        dataType: 'json',
+
+        complete: function(e, xhr, settings){
+
+
+            //console.log(e);
+
+            if(e.status === 200){
+
+                
+
+                var data = $.parseJSON(e.responseText);
+
+                console.log(data);
+
+                printInformation(data);
+
+                goStep(3);
+
+
+            }else if(e.status === 202){
+
+                setTimeout(function(){
+                    alert('202');
+                    checkSummoner(username, region);
+                }, 10 * 1000);
+
             
 
-$('.download').click(function(){
-    window.open('https://get.tacter.app/KWRiClhutfb');
-});
+            }else if(e.status === 404){
+            
+                alert('404');
+                console.log(data);
+                showError();
+                
+
+            }else if(e.status >= 500){
+                
+                alert(e.status);
+                console.log(data);
+                showError();
+                
+
+            }
+
+        }
 
 
-$('.btn_share').click(function(){
-    var network = $(this).attr('alt');
-    var share_url = document.location.href;
-    var share_message = 'Check my TFT Set 4 performance';
+    });
+}
+
+function showError(){
+    $('#step1').hide();
+    $('#step2').hide();
+    $('#error').show();
+
+    $('#error .username').html(username);
+    $('#error .region').html(region);
+}
+
+
+$(function(){
+
+    $('#form_username').submit(function(e){
+        e.preventDefault();
+        
+        goStep(2);
+
+        username = $('#summoner').val();
+        region = $('#region').val();
+
+        checkSummoner(username, region);
+    });
+
+
+    $('#form_email').submit(function(e){
+        e.preventDefault();
+
+        $('#msg_sent').show();
+
+        $('#btn_send_email').css('disabled', 'disabled').css('opacity', 0.5).html('Email submitted!');
     
-    if (network == 'twitter') {
-        share_url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(share_message) + '&tw_p=tweetbutton&url=' + share_url;
+        $.ajax({
+            url: 'https://staging.tacter.app/tft/v1/report?summonerName=' + username + '&region=' + region + '&email=' + $('#email').val(),
+            dataType: 'json',
+        });
+    });
 
-    } else if (network == 'facebook') {
-        share_url = 'https://www.facebook.com/sharer/sharer.php?u=' + share_url + '&quote=' + encodeURIComponent(share_message);
 
-    } if (network == 'whatsapp') {
-        share_url = 'whatsapp://send?text=' + encodeURIComponent(share_message + ' ' + share_url);
+
+    if( document.location.href.indexOf('summonerName') > -1 ){
+        let searchParams = new URLSearchParams(window.location.search);
+        username = searchParams.get('summonerName');
+        region = searchParams.get('region');
+
+        goStep(2);
+
+        checkSummoner(username, region);
     }
 
-    window.open(share_url);
-});
 
+            
+
+    $('.download').click(function(){
+        window.open('https://get.tacter.app/KWRiClhutfb');
+    });
+
+
+    $('.btn_share').click(function(){
+        var network = $(this).attr('alt');
+        var share_url = document.location.href;
+        var share_message = 'Check my TFT Set 4 performance';
+        
+        if (network == 'twitter') {
+            share_url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(share_message) + '&tw_p=tweetbutton&url=' + share_url;
+
+        } else if (network == 'facebook') {
+            share_url = 'https://www.facebook.com/sharer/sharer.php?u=' + share_url + '&quote=' + encodeURIComponent(share_message);
+
+        } if (network == 'whatsapp') {
+            share_url = 'whatsapp://send?text=' + encodeURIComponent(share_message + ' ' + share_url);
+        }
+
+        window.open(share_url);
+    });
+
+
+});
 </script>
 
 </body>
