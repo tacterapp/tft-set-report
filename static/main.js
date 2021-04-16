@@ -199,6 +199,10 @@ function showError(data){
     $('#error .region').html(region);
 }
 
+function resetFormUser(){
+    $('#summoner').val('');
+    goStep(1);
+}
 
 $(function(){
 
