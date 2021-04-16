@@ -137,11 +137,11 @@ function printInformation(data){
         var current_value = parseInt( ( value * 150 ) / placement_max);
         var current_color;
 
-        if( value < 20 ){
+        if( i == 0 ){
             current_color = '#baa944';
-        }else if( value < 30 ){
+        }else if( i == 1 ){
             current_color = '#7d8891';
-        }else if( value < 40 ){
+        }else if( i == 2 ){
             current_color = '#bd7753';
         }else{
             current_color = '#565d64';
