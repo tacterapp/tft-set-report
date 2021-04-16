@@ -100,7 +100,7 @@ table tr.bold td{font-weight:bold;color:white;}
 
 
 
-<div id="step1" class="wrap2 step">
+<div id="step1" class="wrap2 step hide">
     <form id="form_username">
         <h1>Welcome to the TFT Set 4 Report</h1>
         <div class="credits">
@@ -620,10 +620,9 @@ $(function(){
         username = searchParams.get('summonerName');
         region = searchParams.get('region');
 
-        $('#step1').hide();
-        $('#step2').hide();
-
         checkSummoner(username, region);
+    }else{
+        goStep(1);
     }
 
 
