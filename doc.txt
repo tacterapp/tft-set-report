@@ -1,0 +1,63 @@
+La web es una app sencilla de una página que consta de 3 ficheros:
+
+1- index.html : aquí están todas las pantallas maquetadas
+2- static/main.css : aquí estan todas las reglas css
+3- static/main.js : aquí toda la capa de javascript
+
+--------------------------------
+
+index.html
+
+- Cada pantalal tiene un id step junto un número, ej step1 (paso 1), así que es fácil identificar cada paso.
+- He dejado un comentario donde podéis dejar el código de analytics <!--analytics-->
+- Como el SEO se comentó que no era importante para esto y para evitar que se indexen URLs puse un meta robots noindex.
+
+
+--------------------------------
+
+main.js
+
+VARIABLES PERSONALIZABLES
+
+- timeout_report: el tiempo de espera que hace para comprobar si el reporte de un usuario está listo, por defecto 30 segundos.
+- share_message: mensaje que acompaña al tweet si se comparte en las redes sociales.
+- app_url: url para descargar la app, se cambia aquí no en el html para así solo tener que cambiarlo en un punto.
+- api_url: url donde está el API por defecto https://staging.tacter.app/tft/v1
+
+
+FUNCIONES
+
+- goStep: es la función que permite cambiar de una pantalla a otra, si detecta algún elemento con clase number, graph o icon hace la animación.
+- printInformation: pinta toda la información del jugador que devuelve el API.
+- checkSummoner: consulta la información del usuario y tiene en cuenta los estados que devuelve el API.
+- showError: muestra la pantalla de error y el motivo.
+- resetFormUser: vuelve al paso uno y vacía el campo del nombre del jugador.
+
+Importante: Si se hace algún cambio en el javascript recomiendo hacer un cambio de parámetro en el html para forzar al nevagador a recargar el fichero, por ejemplo:
+
+<script src="static/main.js?v=8"></script>
+
+Hay que cambiarlo a:
+
+<script src="static/main.js?v=9"></script>
+
+
+--------------------------------
+
+main.css
+
+El CSS contiene lo mínimo, no sé está usando bootstrap, ni otro framework CSS para que sea lo más ligero posible.
+
+Las reglas están ordenadas de la siguiente forma:
+1- generales: reglas que afectan a elementos html.
+2- compartidas: reglas comunes que afectan a las diferentes pantallas.
+3- específicas: reglas que afectan a ciertos pasos.
+4- específicas responsive: reglas que afectan solo en la versión de escritorio ya que por defecto el css está hecho para mobile first. 
+
+Importante: Si se hace un cambio en el css al igual que con javascript hay que hacer un cambio en un parámetro en el html para forzar al navegador a recargar el fichero, por ejemplo:
+
+<link rel="stylesheet" href="static/main.css?v=3">
+
+Hay que cambiarlo a:
+
+<link rel="stylesheet" href="static/main.css?v=4">
