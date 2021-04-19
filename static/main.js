@@ -1,5 +1,10 @@
-var step = 1;
+
 var timeout_report = 30 * 1000; // 30 seg
+var share_message = 'Check my TFT Set 4 performance';
+var app_url = 'https://get.tacter.app/KWRiClhutfb';
+
+
+var step = 1;
 var screen_width = $(document).width();
 var is_mobile = screen_width < 480;
 var loading = false;
@@ -249,14 +254,13 @@ $(function(){
             
 
     $('.download').click(function(){
-        window.open('https://get.tacter.app/KWRiClhutfb');
+        window.open(app_url);
     });
 
 
     $('.btn_share').click(function(){
         var network = $(this).attr('alt');
         var share_url = document.location.href;
-        var share_message = 'Check my TFT Set 4 performance';
         
         if (network == 'twitter') {
             share_url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(share_message) + '&tw_p=tweetbutton&url=' + share_url;
