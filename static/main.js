@@ -122,8 +122,8 @@ function printInformation(data){
     $('#items').html(html_items);
 
 
-    var html_items_aux = '&nbsp; <img src="' + data.champions[0].iconURL + '" align="absmiddle" width="30" height="30" class="icon"> ';
-    html_items_aux += '<img src="' + data.items[0].iconURL + '" align="absmiddle" width="30" height="30" class="icon"> ';
+    var html_items_aux = '&nbsp; <img src="' + data.champions[0].iconURL + '" title="' + data.champions[0].name + '" style="cursor:help;" align="absmiddle" width="30" height="30" class="icon"> ';
+    html_items_aux += '<img src="' + data.items[0].iconURL + '" title="' + data.items[0].name + '" style="cursor:help;" align="absmiddle" width="30" height="30" class="icon"> ';
     $('#step6 .box_avatar div').append(html_items_aux);
 
 
