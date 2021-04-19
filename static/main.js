@@ -230,12 +230,21 @@ $(function(){
         e.preventDefault();
 
         $('#msg_sent').show();
-
         $('#btn_send_email').css('disabled', 'disabled').css('opacity', 0.5).html('Email submitted!');
     
         $.ajax({
             url: api_url + '/report?summonerName=' + username + '&region=' + region + '&email=' + $('#email').val(),
             dataType: 'json',
+            complete: function(e, xhr, settings){
+                var data = $.parseJSON(e.responseText);
+                if(e.status === 200){
+                    printInformation(data);
+                }else if(e.status === 400){
+                    showError(data);
+                }else if(e.status === 500){
+                    showError(data);
+                }
+            }
         });
     });
 
