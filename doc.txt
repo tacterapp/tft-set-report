@@ -20,7 +20,7 @@ main.js
 VARIABLES PERSONALIZABLES
 
 - timeout_report: el tiempo de espera que hace para comprobar si el reporte de un usuario está listo, por defecto 30 segundos.
-- share_message: mensaje que acompaña al tweet si se comparte en las redes sociales.
+- share_message: mensaje que acompaña si se comparte en las redes sociales.
 - app_url: url para descargar la app, se cambia aquí no en el html para así solo tener que cambiarlo en un punto.
 - api_url: url donde está el API por defecto https://staging.tacter.app/tft/v1
 
