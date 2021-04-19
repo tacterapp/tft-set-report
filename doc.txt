@@ -4,7 +4,9 @@ La web es una app sencilla de una página que consta de 3 ficheros:
 2- static/main.css : aquí estan todas las reglas css
 3- static/main.js : aquí toda la capa de javascript
 
+
 --------------------------------
+
 
 index.html
 
@@ -14,6 +16,7 @@ index.html
 
 
 --------------------------------
+
 
 main.js
 
@@ -44,6 +47,7 @@ Hay que cambiarlo a:
 
 --------------------------------
 
+
 main.css
 
 El CSS contiene lo mínimo, no sé está usando bootstrap, ni otro framework CSS para que sea lo más ligero posible.
@@ -61,3 +65,13 @@ Importante: Si se hace un cambio en el css al igual que con javascript hay que h
 Hay que cambiarlo a:
 
 <link rel="stylesheet" href="static/main.css?v=4">
+
+
+--------------------------------
+
+
+jQuery
+Uso la librería jQuery no solo por los selectores sino también por los plugins y porqué para manipular algunas cosas es más fácil que hacerlo a pelo.
+
+jquery.animateNumbers.min.js
+Este plugin de jQuery como indica el nombre es para hacer la animación de los números.
