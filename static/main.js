@@ -2,6 +2,7 @@
 var timeout_report = 30 * 1000; // 30 seg
 var share_message = 'Check my TFT Set 4 performance';
 var app_url = 'https://get.tacter.app/KWRiClhutfb';
+var api_url = 'https://staging.tacter.app/tft/v1';
 
 
 var step = 1;
@@ -177,7 +178,7 @@ function printInformation(data){
 
 function checkSummoner(username, region){
     $.ajax({
-        url: 'https://staging.tacter.app/tft/v1/report?summonerName=' + username + '&region=' + region,// 'test.json?v=2',
+        url: api_url + '/report?summonerName=' + username + '&region=' + region,
         dataType: 'json',
         complete: function(e, xhr, settings){
             var data = $.parseJSON(e.responseText);
@@ -233,7 +234,7 @@ $(function(){
         $('#btn_send_email').css('disabled', 'disabled').css('opacity', 0.5).html('Email submitted!');
     
         $.ajax({
-            url: 'https://staging.tacter.app/tft/v1/report?summonerName=' + username + '&region=' + region + '&email=' + $('#email').val(),
+            url: api_url + '/report?summonerName=' + username + '&region=' + region + '&email=' + $('#email').val(),
             dataType: 'json',
         });
     });
