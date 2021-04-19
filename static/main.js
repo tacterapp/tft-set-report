@@ -5,6 +5,7 @@ var is_mobile = screen_width < 480;
 var loading = false;
 var username;
 var region;
+var timeout_check;
 
 function format_time(time) {
     // Hours, minutes and seconds
@@ -53,6 +54,7 @@ function goStep(index){
 
     if( index == 1 ){
         $('#credits').hide();
+        clearInterval( timeout_check );
     }else{
         $('#credits').show();
     }
@@ -177,7 +179,7 @@ function checkSummoner(username, region){
             if(e.status === 200){
                 printInformation(data);
             }else if(e.status === 202){
-                setTimeout(function(){
+                timeout_check = setTimeout(function(){
                     checkSummoner(username, region);
                 }, timeout_report);
             }else if(e.status === 400){
