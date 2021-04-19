@@ -1,22 +1,23 @@
+/* generales */
 *{font-family:arial;}
-.step{padding:15px;}
-.hide{display:none;}
-
 HTML, BODY{height:100%;}
 BODY{margin:0;padding:0;font-size:1rem;text-align:center;color:#a4b3bf;background:black url('img/background.png') top center;background-size:cover;background-attachment:fixed;}
 BUTTON.next{cursor:pointer;font-size:1.1rem;font-weight:bold;border:1px #c79e57 solid;background:#c79e57;padding:10px 20px;color:#171721;border-radius:5px;}
 BUTTON.back{font-size:18px;margin-top:10px;cursor:pointer;background:none;padding:0;border:0;color:#c79e57;font-weight:bold;text-decoration:none;}
 SELECT, INPUT[type=text], INPUT[type=email]{margin:10px 0;width:95%;padding:10px 20px;background:#202326;border:1px #a4b3bf solid;color:#a4b3bf;border-radius:5px;}
-A.link{color:#c79e57;font-weight:bold;text-decoration:none;}
-A.legal{color:#a4b3bf;text-decoration:none;}
-strong{font-size:40px;display:block;}
+STRONG{font-size:40px;display:block;}
 H1, H2{font-size:25px;}
 H1, H2, STRONG, B{color:white;}
 LABEL{display:block;text-align:left;}
+table td{text-align:center;}
+table tr.bold td{font-weight:bold;color:white;}
 
 
-
-
+/* compartidas */
+A.link{color:#c79e57;font-weight:bold;text-decoration:none;}
+A.legal{color:#a4b3bf;text-decoration:none;}
+.step{padding:15px;}
+.hide{display:none;}
 .box{border-radius:5px;background:#151719;padding:15px;border:1px #a4b3bf solid;margin:25px 0;}
     .box .subtitle{display:block;margin-bottom:20px;}
 .col2{float:left;width:50%;}
@@ -35,14 +36,12 @@ LABEL{display:block;text-align:left;}
     .comment span.author{margin-top:10px;display:block;text-align:right;}
     .comment .stars{margin:10px 0;color:#c79e57;font-size: 30px;}
 
-
 .credits{padding-bottom:25px;}
     .credits a{color:#a4b3bf;text-decoration:none;}
     .credits_fixed{position:fixed;width:300px;left:50%;margin-left:-150px;bottom:0;}
 
-table td{text-align:center;}
-table tr.bold td{font-weight:bold;color:white;}
 
+/* específicas */
 #step1 input{width:60%;}
 #step1 select{width:25%;font-weight:bold;color:white;}
 #step1 .col2 a{display:block;text-align:left;}
@@ -63,13 +62,12 @@ table tr.bold td{font-weight:bold;color:white;}
 #step6 .padding{padding-top:25px;}
 
 
+/* específicas responsive */
 @media screen and (min-width: 480px) {
-
     .wrap{width:480px;margin:auto;}
     .wrap2{width:800px;margin:auto;}
     .comment{width:45%;float:left;margin:40px 1%;}
 
     #step1 input[type=text]{width:69%;}
     #step2 input[type=text]{width:95%;}
-
 }
