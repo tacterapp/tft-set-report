@@ -223,6 +223,8 @@ $(function(){
         username = $('#summoner').val().trim();
         region = $('#region').val();
 
+        window.history.pushState('new url', document.title, '/?summonerName=' + username + '&region=' + region);
+
         checkSummoner(username, region);
     });
 
