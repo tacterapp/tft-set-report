@@ -128,6 +128,7 @@ function printInformation(data){
     $('#items').html(html_items);
 
 
+    $('#step6 .box_avatar img').remove();
     var html_items_aux = '&nbsp; <img src="' + data.champions[0].iconURL + '" title="' + data.champions[0].name + '" style="cursor:help;" align="absmiddle" width="30" height="30" class="icon"> ';
     html_items_aux += '<img src="' + data.items[0].iconURL + '" title="' + data.items[0].name + '" style="cursor:help;" align="absmiddle" width="30" height="30" class="icon"> ';
     $('#step6 .box_avatar div').append(html_items_aux);
@@ -270,7 +271,7 @@ $(function(){
 
     $('.btn_share').click(function(){
         var network = $(this).attr('alt');
-        var share_url = document.location.href;
+        var share_url = document.location.href.split('?')[0];
         
         if (network == 'twitter') {
             share_url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(share_message) + '&tw_p=tweetbutton&url=' + share_url;

@@ -45,7 +45,7 @@ A.legal{color:#a4b3bf;text-decoration:none;}
 #step1 input{width:60%;}
 #step1 select{width:25%;font-weight:bold;color:white;}
 #step1 .col2 a{display:block;text-align:left;}
-
+#step1 b{display:block;}
 
 #step3 .box_avatar{text-align:left;color:white;font-weight:bold;padding-top:15px;padding-bottom:15px;width:200px;margin:20px auto;background:url('img/tacter_logo_small.png') no-repeat;background-size:auto 100%;background-position:left top;}
     #step3 .box_avatar div{padding-left:80px;}
