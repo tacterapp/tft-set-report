@@ -26,7 +26,7 @@ VARIABLES PERSONALIZABLES
 - share_message: mensaje que acompaña si se comparte en las redes sociales.
 - app_url: url para descargar la app, se cambia aquí no en el html para así solo tener que cambiarlo en un punto.
 - api_url: url donde está el API por defecto https://staging.tacter.app/tft/v1
-
+- web_url: url donde está alojada la web se tiene en cuenta esta variable a la hora de compartir el resultado.
 
 FUNCIONES
 

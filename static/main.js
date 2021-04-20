@@ -3,7 +3,7 @@ var timeout_report = 30 * 1000; // 30 seg
 var share_message = 'Check my TFT Set 4 performance';
 var app_url = 'https://get.tacter.app/KWRiClhutfb';
 var api_url = 'https://staging.tacter.app/tft/v1';
-
+var web_url = 'https://report.tacter.app/';
 
 var step = 1;
 var screen_width = $(document).width();
@@ -220,7 +220,7 @@ $(function(){
         
         goStep(2);
 
-        username = $('#summoner').val();
+        username = $('#summoner').val().trim();
         region = $('#region').val();
 
         checkSummoner(username, region);
@@ -271,10 +271,10 @@ $(function(){
 
     $('.btn_share').click(function(){
         var network = $(this).attr('alt');
-        var share_url = document.location.href.split('?')[0];
+        var share_url = web_url + '?summonerName=' + username + '&region=' + region;
         
         if (network == 'twitter') {
-            share_url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(share_message) + '&tw_p=tweetbutton&url=' + share_url;
+            share_url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(share_message) + '&tw_p=tweetbutton&url=' + encodeURIComponent( share_url );
 
         } else if (network == 'facebook') {
             share_url = 'https://www.facebook.com/sharer/sharer.php?u=' + share_url + '&quote=' + encodeURIComponent(share_message);
