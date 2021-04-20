@@ -211,6 +211,8 @@ function showError(data){
 function resetFormUser(){
     $('#summoner').val('');
     goStep(1);
+
+    window.history.pushState('new url', document.title, web_url);
 }
 
 $(function(){
